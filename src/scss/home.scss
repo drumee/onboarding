@@ -1,352 +1,275 @@
-/* Global reset and viewport fix *//* SCSS for Our Features page */
-
-* {:root{--bg:#222430;--panel:#f6f7fb;--accent:#8a2be2;--text-dark:#10101a;--muted:#707486}
-
-  margin: 0;*{box-sizing:border-box}
-
-  padding: 0;html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--panel)}
-
-  box-sizing: border-box;.container{max-width:1100px;margin:0 auto;padding:2rem}
-
+:root{
+  --page-bg:#F4F4F6;
+  --panel:#FFFFFF;
+  --brand:#110945;
+  --accent:#B251FB;
+  --muted:#8C929C;
 }
 
-.modal{background:var(--panel);color:var(--text-dark);padding:3rem;border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
-
-html,.badge{display:inline-block;background:#f5e8ff;color:var(--accent);padding:.5rem 1rem;border-radius:999px;font-weight:600}
-
-body {.features h2{text-align:center;font-size:2.25rem;margin-top:1rem}
-
-  width: 100%;.features .lead{text-align:center;color:var(--muted);max-width:700px;margin:0.5rem auto 2rem}
-
+/* reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,
+body {
+  width: 100%;
   height: 100%;
-
-  overflow: hidden;.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem}
-
-  background: #f4f4f6;.card{background:#fff;padding:1.25rem;border-radius:12px;color:var(--text-dark);box-shadow:0 4px 18px rgba(20,20,30,0.06)}
-
-  font-family: "Inter", sans-serif;.card-icon{font-size:2rem}
-
-  color: #110945;.card h3{margin:0.5rem 0}
-
-}
-
-.modal-cta{text-align:center;margin-top:1.5rem}
-
-/* Core layout */.btn{display:inline-block;background:var(--accent);color:#fff;padding:.75rem 1.25rem;border-radius:999px;text-decoration:none}
-
-.page-frame {
-
-  position: fixed;@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
-
-  top: 0;@media(max-width:520px){.cards{grid-template-columns:1fr}.container{padding:1rem}}
-
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   background: #f4f4f6;
-}
-
-/* Header */
-.site-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 50;
-}
-
-.header-pill {
-  position: absolute;
-  top: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 720px;
-  background: #fff;
-  border-radius: 1000px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  padding: 10px 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-}
-
-.logo-mark {
-  width: 32px;
-  height: 32px;
-}
-
-.brand-text {
-  font-weight: 700;
-  font-size: 18px;
+  font-family: "Inter", sans-serif;
   color: #110945;
 }
 
-.site-nav {
-  display: flex;
-  gap: 24px;
+/* page frame */
+.page-frame{
+  position:relative;
+  min-height:100vh;
+  width:100%;
+  background:var(--page-bg);
+  overflow:visible;
 }
 
-.nav-link {
-  text-decoration: none;
-  font-weight: 500;
-  color: #a0a0b0;
-  transition: color 0.2s;
+/* -------------------- HEADER -------------------- */
+.site-header{
+  position:relative;
+  z-index:400;
+  width:100%;
+  pointer-events:auto;
 }
 
-.nav-link:hover {
-  color: #110945;
+.header-pill{
+  position:absolute;
+  left:50%;
+  top:28px; /* small top breathing room */
+  transform:translateX(-50%);
+  width:760px;
+  height:64px;
+  background:var(--panel);
+  border-radius:1000px;
+  box-shadow:0 8px 24px rgba(16,16,24,0.06);
+  display:flex;
+  align-items:center;
+  padding:0 18px;
 }
 
-.btn-register {
-  background: #110945;
-  color: #fff;
-  border-radius: 48px;
-  padding: 10px 20px;
-  font-weight: 600;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: background 0.2s;
+/* layout: left group and register on right */
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
 }
 
-.btn-register:hover {
-  background: #1e0f66;
+/* left group contains brand + nav */
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:28px;
 }
 
-.register-text {
-  font-size: 14px;
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:34px;height:34px}
+.brand-text{font-weight:700;font-size:18px;color:var(--brand)}
+
+.site-nav{display:flex;gap:22px;align-items:center}
+.nav-link{color:#AFB3BB;text-decoration:none;font-weight:600}
+.nav-link:hover{color:var(--brand)}
+
+/* register button pinned right with white-circle arrow */
+.btn-register{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 18px;
+  background:var(--brand);
+  color:#fff;
+  border-radius:1000px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 6px 18px rgba(17,9,69,0.12);
 }
 
-.register-icon {
-  font-size: 18px;
+.register-text{font-size:14px}
+.register-icon{
+  width:36px;height:36px;border-radius:50%;
+  background:#fff;display:flex;align-items:center;justify-content:center;
+}
+.register-arrow{width:14px;height:14px;}
+
+/* -------------------- BANNER (background artwork) -------------------- */
+/* Make banner a background layer under hero, not overlapping hero content */
+.banner-stage{
+  position:absolute;
+  top:120px; /* place just under header */
+  left:0;right:0;
+  height:460px; /* reserve space for artwork */
+  z-index:50; /* low so hero/input sit above */
+  pointer-events:none;
 }
 
-/* Banner */
-.banner-stage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  overflow: hidden;
+.banner-line{
+  position:absolute;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+  width:1500px;
+  opacity:0.25;
+  pointer-events:none;
 }
 
-.banner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: 95%;
-  max-width: 95%;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
+.banner{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:1160px;
+  height:auto;
+  pointer-events:none;
+  z-index:55;
+  opacity:0.98;
 }
 
-.banner-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
+/* -------------------- HERO -------------------- */
+/* Put hero below banner-stage visually: hero top = banner top + banner height offset */
+.hero{
+  position:absolute;
+  left:50%;
+  top:420px; /* tuned for 1920x1080: below banner */
+  transform:translateX(-50%);
+  z-index:120; /* higher than banner so text sits above artwork */
+  text-align:center;
+  width:100%;
+  max-width:1000px;
 }
 
-/* Hero */
-.hero {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  text-align: center;
-  max-width: 600px;
+.hero-title{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  font-size:64px;
+  font-weight:800;
+  color:var(--brand);
+  margin:0;
+  line-height:1;
 }
 
-.hero-title {
-  font-size: 64px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+/* Remove the extra white circle ring around badge: make badge flat purple */
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:64px;height:64px;
+  border-radius:999px;
+  background:var(--accent);
+  box-shadow:0 8px 24px rgba(178,81,251,0.12);
+  padding:0;
 }
 
-.hero-word {
-  display: inline-block;
+/* hide/bypass any extra decorative span in markup (badge-circle) */
+.hero-badge .badge-circle{ display:none; }
+
+/* Ensure the logo inside badge is visible and sized nicely.
+   If the svg is dark, we invert via filter; if it's white already, this does nothing harmful. */
+.badge-logo{
+  width:34px;height:34px;
+  filter: brightness(0) invert(1); /* makes dark svg appear white on purple */
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  position: relative;
+/* lead paragraph */
+.lead{
+  margin-top:18px;
+  color:var(--muted);
+  max-width:640px;
+  margin-left:auto;margin-right:auto;
+  font-size:16px;
+  line-height:1.6;
 }
 
-.badge-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  z-index: 1;
+/* -------------------- INPUT CARD -------------------- */
+/* narrower and taller card (per your request) */
+.input-card{
+  position:absolute;
+  left:50%;
+  top:720px; /* sits visually under hero */
+  transform:translateX(-50%);
+  width:560px;           /* narrower */
+  z-index:220;           /* above hero and banner */
 }
 
-.badge-logo {
-  width: 32px;
-  height: 32px;
-  z-index: 2;
-  position: relative;
+/* the white panel */
+.input-inner{
+  background:var(--panel);
+  border-radius:24px;
+  padding:18px 22px;
+  box-shadow:0 18px 40px rgba(17,9,69,0.09);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-.lead {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #6b6b7e;
-  margin-bottom: 32px;
+/* taller input feel */
+.hero-input{
+  width:100%;
+  border:none;
+  outline:none;
+  font-size:16px;
+  color:#9b9b9f;
+  padding:8px 6px;
+  background:transparent;
 }
 
-/* Input card */
-.input-card {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-  width: 720px;
+/* actions row: left chips and send on right */
+.input-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
 }
 
-.input-inner {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-  padding: 20px 24px;
+/* left group of chips */
+.chips-left{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+/* ALL chips styled same as "Create new Folder" (bold + same background) */
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  font-weight:700; /* bold */
+  font-size:14px;
+  background:var(--brand);
+  color:#fff;
+  box-shadow:0 6px 18px rgba(17,9,69,0.08);
 }
 
-.hero-input {
-  width: 100%;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  color: #110945;
-  margin-bottom: 12px;
-  padding: 4px 0;
+.chip .chip-icon{width:16px;height:16px;display:block;filter:brightness(0) invert(1)}
+
+/* send (round) */
+.send{
+  background:var(--brand);
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;
+  box-shadow:0 6px 18px rgba(17,9,69,0.12);
+}
+.send-icon{width:16px;height:16px;filter:brightness(0) invert(1)}
+
+/* -------------------- FOOTER -------------------- */
+.site-footer{
+  position:absolute;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#aaa;
+  font-size:13px;
+  z-index:100;
 }
 
-.hero-input::placeholder {
-  color: #a0a0b0;
-}
-
-.input-actions {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.chip {
-  background: #f0f0f2;
-  border: none;
-  border-radius: 18px;
-  padding: 6px 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: #110945;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.chip:hover {
-  background: #e4e4e6;
-}
-
-.chip.ghost {
-  background: transparent;
-  border: 1px solid #e0e0e4;
-}
-
-.chip.ghost:hover {
-  background: #f8f8fa;
-}
-
-.chip-icon {
-  width: 16px;
-  height: 16px;
-}
-
-.send {
-  background: #110945;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  margin-left: auto;
-  transition: background 0.2s;
-}
-
-.send:hover {
-  background: #1e0f66;
-}
-
-.send-icon {
-  width: 16px;
-  height: 16px;
-}
-
-/* Footer */
-.site-footer {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 50;
-  font-size: 13px;
-  color: #9b9ba8;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .header-pill,
-  .input-card {
-    width: 90%;
-  }
-
-  .hero-title {
-    font-size: 48px;
-  }
-
-  .hero {
-    max-width: 90%;
-  }
+/* small responsive adjustments */
+@media (max-width:1200px){
+  .header-pill{ width:84%; left:50%; transform:translateX(-50%); }
+  .banner{ width:92%; }
+  .hero-title{ font-size:48px; }
+  .input-card{ width:84%; left:50%; transform:translateX(-50%); top:780px; }
 }
