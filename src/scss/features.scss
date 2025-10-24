@@ -1,0 +1,21 @@
+/* SCSS for Our Features page */
+:root{--bg:#222430;--panel:#f6f7fb;--accent:#8a2be2;--text-dark:#10101a;--muted:#707486}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--panel)}
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+
+.modal{background:var(--panel);color:var(--text-dark);padding:3rem;border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+.badge{display:inline-block;background:#f5e8ff;color:var(--accent);padding:.5rem 1rem;border-radius:999px;font-weight:600}
+.features h2{text-align:center;font-size:2.25rem;margin-top:1rem}
+.features .lead{text-align:center;color:var(--muted);max-width:700px;margin:0.5rem auto 2rem}
+
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem}
+.card{background:#fff;padding:1.25rem;border-radius:12px;color:var(--text-dark);box-shadow:0 4px 18px rgba(20,20,30,0.06)}
+.card-icon{font-size:2rem}
+.card h3{margin:0.5rem 0}
+
+.modal-cta{text-align:center;margin-top:1.5rem}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:.75rem 1.25rem;border-radius:999px;text-decoration:none}
+
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.cards{grid-template-columns:1fr}.container{padding:1rem}}
