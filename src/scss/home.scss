@@ -6,7 +6,6 @@
   --muted:#8C929C;
 }
 
-/* reset */
 *{box-sizing:border-box;margin:0;padding:0}
 html,
 body {
@@ -18,7 +17,6 @@ body {
   color: #110945;
 }
 
-/* page frame */
 .page-frame{
   position:relative;
   min-height:100vh;
@@ -27,7 +25,6 @@ body {
   overflow:visible;
 }
 
-/* -------------------- HEADER -------------------- */
 .site-header{
   position:relative;
   z-index:400;
@@ -38,9 +35,9 @@ body {
 .header-pill{
   position:absolute;
   left:50%;
-  top:28px; /* small top breathing room */
+  top:18px;
   transform:translateX(-50%);
-  width:760px;
+  width:680px;
   height:64px;
   background:var(--panel);
   border-radius:1000px;
@@ -50,7 +47,6 @@ body {
   padding:0 18px;
 }
 
-/* layout: left group and register on right */
 .header-inner{
   display:flex;
   align-items:center;
@@ -58,7 +54,6 @@ body {
   width:100%;
 }
 
-/* left group contains brand + nav */
 .header-left{
   display:flex;
   align-items:center;
@@ -67,13 +62,12 @@ body {
 
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo-mark{width:34px;height:34px}
-.brand-text{font-weight:700;font-size:18px;color:var(--brand)}
+.brand-text{font-weight:1000;font-size:25px;color:var(--brand)}
 
 .site-nav{display:flex;gap:22px;align-items:center}
 .nav-link{color:#AFB3BB;text-decoration:none;font-weight:600}
 .nav-link:hover{color:var(--brand)}
 
-/* register button pinned right with white-circle arrow */
 .btn-register{
   display:flex;
   align-items:center;
@@ -94,47 +88,44 @@ body {
 }
 .register-arrow{width:14px;height:14px;}
 
-/* -------------------- BANNER (background artwork) -------------------- */
-/* Make banner a background layer under hero, not overlapping hero content */
 .banner-stage{
   position:absolute;
-  top:120px; /* place just under header */
+  top:100px;
   left:0;right:0;
-  height:460px; /* reserve space for artwork */
-  z-index:50; /* low so hero/input sit above */
+  height:460px;
+  z-index:5;
   pointer-events:none;
+  overflow:visible;
 }
 
 .banner-line{
   position:absolute;
   left:50%;
-  top:0;
+  bottom:0px;
   transform:translateX(-50%);
-  width:1500px;
-  opacity:0.25;
+  width:100%;
+  max-width:1920px;
   pointer-events:none;
 }
 
 .banner{
   position:absolute;
   left:50%;
-  top:50%;
+  top:calc(50% - 40px);
   transform:translate(-50%,-50%);
-  width:1160px;
+  width:1100px;
   height:auto;
   pointer-events:none;
-  z-index:55;
-  opacity:0.98;
+  z-index:6;
+  opacity:1;
 }
 
-/* -------------------- HERO -------------------- */
-/* Put hero below banner-stage visually: hero top = banner top + banner height offset */
 .hero{
   position:absolute;
   left:50%;
-  top:420px; /* tuned for 1920x1080: below banner */
+  top:510px;
   transform:translateX(-50%);
-  z-index:120; /* higher than banner so text sits above artwork */
+  z-index:100;
   text-align:center;
   width:100%;
   max-width:1000px;
@@ -150,9 +141,10 @@ body {
   color:var(--brand);
   margin:0;
   line-height:1;
+  position:relative;
+  z-index:101;
 }
 
-/* Remove the extra white circle ring around badge: make badge flat purple */
 .hero-badge{
   display:inline-flex;
   align-items:center;
@@ -164,17 +156,13 @@ body {
   padding:0;
 }
 
-/* hide/bypass any extra decorative span in markup (badge-circle) */
 .hero-badge .badge-circle{ display:none; }
 
-/* Ensure the logo inside badge is visible and sized nicely.
-   If the svg is dark, we invert via filter; if it's white already, this does nothing harmful. */
 .badge-logo{
   width:34px;height:34px;
-  filter: brightness(0) invert(1); /* makes dark svg appear white on purple */
+  filter: brightness(0) invert(1);
 }
 
-/* lead paragraph */
 .lead{
   margin-top:18px;
   color:var(--muted);
@@ -182,20 +170,19 @@ body {
   margin-left:auto;margin-right:auto;
   font-size:16px;
   line-height:1.6;
+  position:relative;
+  z-index:101;
 }
 
-/* -------------------- INPUT CARD -------------------- */
-/* narrower and taller card (per your request) */
 .input-card{
   position:absolute;
   left:50%;
-  top:720px; /* sits visually under hero */
+  top:680px;
   transform:translateX(-50%);
-  width:560px;           /* narrower */
-  z-index:220;           /* above hero and banner */
+  width:560px;
+  z-index:220;
 }
 
-/* the white panel */
 .input-inner{
   background:var(--panel);
   border-radius:24px;
@@ -206,7 +193,6 @@ body {
   gap:12px;
 }
 
-/* taller input feel */
 .hero-input{
   width:100%;
   border:none;
@@ -217,7 +203,6 @@ body {
   background:transparent;
 }
 
-/* actions row: left chips and send on right */
 .input-actions{
   display:flex;
   align-items:center;
@@ -225,10 +210,8 @@ body {
   gap:12px;
 }
 
-/* left group of chips */
 .chips-left{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 
-/* ALL chips styled same as "Create new Folder" (bold + same background) */
 .chip{
   display:inline-flex;
   align-items:center;
@@ -237,16 +220,15 @@ body {
   border-radius:999px;
   border:none;
   cursor:pointer;
-  font-weight:700; /* bold */
+  font-weight:700;
   font-size:14px;
-  background:var(--brand);
-  color:#fff;
-  box-shadow:0 6px 18px rgba(17,9,69,0.08);
+  background:#F3F2FA;
+  color:var(--brand);
+  box-shadow:0 2px 8px rgba(17,9,69,0.04);
 }
 
-.chip .chip-icon{width:16px;height:16px;display:block;filter:brightness(0) invert(1)}
+.chip .chip-icon{width:16px;height:16px;display:block;}
 
-/* send (round) */
 .send{
   background:var(--brand);
   width:44px;height:44px;border-radius:50%;
@@ -255,7 +237,6 @@ body {
 }
 .send-icon{width:16px;height:16px;filter:brightness(0) invert(1)}
 
-/* -------------------- FOOTER -------------------- */
 .site-footer{
   position:absolute;
   bottom:18px;
@@ -266,7 +247,6 @@ body {
   z-index:100;
 }
 
-/* small responsive adjustments */
 @media (max-width:1200px){
   .header-pill{ width:84%; left:50%; transform:translateX(-50%); }
   .banner{ width:92%; }
