@@ -1,7 +1,6 @@
 :root{
   --bg:#2C2F3C;
   --panel:#F6F7FB;
-  --accent:#A855F7;
   --brand:#110945;
   --text-dark:#2D3748;
   --text-light:#A0AEC0;
@@ -21,52 +20,12 @@ html,body{
   -moz-osx-font-smoothing:grayscale;
 }
 
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 2rem;
-}
-
-.logo{
-  font-size:18px;
-  font-weight:800;
-  color:#fff;
-  text-decoration:none;
-}
-
-.site-nav{
-  display:flex;
-  gap:2rem;
-}
-
-.site-nav a{
-  color:var(--text-light);
-  text-decoration:none;
-  font-weight:500;
-  font-size:14px;
-}
-
-.site-nav a:hover{
-  color:#fff;
-}
-
-.btn-register{
-  margin-left:auto;
-  background:#fff;
-  color:var(--text-dark);
-  padding:0.5rem 1.25rem;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-}
-
 .features{
   display:flex;
   align-items:center;
   justify-content:center;
-  min-height:calc(100vh - 120px);
-  padding:2rem 0;
+  min-height:100vh;
+  padding:2rem;
 }
 
 .modal{
@@ -122,7 +81,6 @@ html,body{
   margin:0 0 1rem;
   font-weight:800;
   color:var(--text-dark);
-  text-align:center;
   line-height:1.1;
 }
 
@@ -131,7 +89,6 @@ html,body{
   font-size:17px;
   line-height:1.5;
   margin-bottom:3rem;
-  text-align:center;
 }
 
 .cards{
@@ -139,7 +96,6 @@ html,body{
   grid-template-columns:repeat(4,1fr);
   gap:1.5rem;
   margin-bottom:2.5rem;
-  text-align:left;
 }
 
 .card{
@@ -148,7 +104,6 @@ html,body{
   border-radius:16px;
   box-shadow:0 1px 3px rgba(0,0,0,0.08);
   transition:box-shadow 0.2s,transform 0.2s;
-  text-align:left;
 }
 
 .card:hover{
@@ -179,7 +134,6 @@ html,body{
 }
 
 .modal-cta{
-  text-align:center;
   margin-top:2rem;
 }
 
@@ -228,6 +182,4 @@ html,body{
 
 @media(max-width:520px){
   .cards{grid-template-columns:1fr}
-  .container{padding:0 1rem}
-  .btn-register{margin-left:0}
 }
