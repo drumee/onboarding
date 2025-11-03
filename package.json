@@ -10,9 +10,13 @@
     "sass:watch": "sass --watch src/scss:dist/css",
     "dev": "sass --watch src/scss:dist/css",
     "serve": "python -m http.server 8080",
-    "start": "python -m http.server 8080"
+    "start": "python -m http.server 8080",
+    "deploy": "drumee-server-deploy"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@drumee/server-dev-tools": "^1.1.28"
+  }
 }
