@@ -9,6 +9,7 @@
     "sass:build:prod": "sass --style=compressed src/scss/home.scss dist/css/home.css && sass --style=compressed src/scss/features.scss dist/css/features.css",
     "sass:watch": "sass --watch src/scss:dist/css",
     "dev": "sass --watch src/scss:dist/css",
+    "sync": "drumee-server-devel",
     "serve": "python3 -m http.server 7080",
     "start": "python3 -m http.server 7080",
     "deploy": "drumee-server-deploy"
