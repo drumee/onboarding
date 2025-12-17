@@ -1,0 +1,94 @@
+@use "../abstracts/colors";
+
+:root {
+  --page-bg: var(--neutral-100);
+  --panel: #ffffff;
+  --brand: var(--primary-900);
+  --accent: var(--primary-500);
+  --muted: var(--neutral-600);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: #fff;
+  font-family: "Inter", sans-serif;
+  color: #110945;
+}
+
+.nav-bar {
+  display: flex;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1440px;
+  height: 56px;
+  padding: 12px 24px;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 120px;
+    height: 40px;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    cursor: pointer;
+    color: var(--neutral-800);
+    font-family: "Armin Grotesk";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.14px;
+    text-decoration: none;
+    &:hover {
+      color: var(--primary-600);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__button {
+    display: flex;
+    height: 40px;
+    padding: 0 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 1000px;
+    cursor: pointer;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.14px;
+
+    &--sign-in {
+      background: var(--neutral-100);
+      color: var(--neutral-900);
+    }
+
+    &--register {
+      background: var(--neutral-950);
+      color: #fff;
+    }
+  }
+}
