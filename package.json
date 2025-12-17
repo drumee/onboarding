@@ -9,15 +9,10 @@
     "sass:build:prod": "sass --style=compressed src/scss/home.scss dist/css/home.css && sass --style=compressed src/scss/features.scss dist/css/features.css",
     "sass:watch": "sass --watch src/scss:dist/css",
     "dev": "sass --watch src/scss:dist/css",
-    "sync": "drumee-server-devel",
-    "serve": "python3 -m http.server 7080",
-    "start": "python3 -m http.server 7080",
-    "deploy": "drumee-server-deploy"
+    "serve": "python3 -m http.server 8080",
+    "start": "python3 -m http.server 8080"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@drumee/server-dev-tools": "^1.1.28"
-  }
+  "license": "ISC"
 }

@@ -8,13 +8,17 @@
     <link
       rel="icon"
       type="image/png"
-      href="../../../src/assets/home_page/logo.svg"
+      href="../../../src/assets/new/logos/logo.svg"
     />
   </head>
   <body>
+    <!-- Nav Bar -->
     <div class="nav-bar">
       <div class="nav-bar__logo">
-        <img src="../../../src/assets/new/home/nav-bar-logo.png" alt="Drumee" />
+        <img
+          src="../../../src/assets/new/logos/nav-bar-logo.png"
+          alt="Drumee"
+        />
       </div>
 
       <div class="nav-bar__menu">
@@ -41,5 +45,110 @@
         <div class="nav-bar__button nav-bar__button--register">Register</div>
       </div>
     </div>
+
+    <!-- Hero Section -->
+    <section class="hero hero--video">
+      <!-- Video background -->
+      <div class="hero__bg-video">
+        <video autoplay muted loop playsinline>
+          <source
+            src="../../../src/assets/new/videos/hero-section.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <!-- Overlay -->
+      <div class="hero__overlay"></div>
+
+      <!-- Content -->
+      <div class="hero__container">
+        <div class="hero__icon">
+          <img
+            src="../../../src/assets/new/logos/hero-logo.png"
+            alt="Drumee icon"
+          />
+        </div>
+
+        <h1 class="hero__title">Your Desktop. Your Cloud. Your Rules.</h1>
+
+        <p class="hero__description">
+          Drumee is a desktop in the cloud – one workspace to manage your files
+          / chats / calls and collaboration
+        </p>
+
+        <div class="hero__file-manager">
+          <div class="hero__search">
+            <input
+              type="text"
+              class="hero__search-input"
+              placeholder="Find a file"
+            />
+            <button class="hero__search-button">
+              <img
+                src="../../../src/assets/new/icons/upward-arrow.png"
+                alt="Music"
+                class="hero__card-icon"
+              />
+            </button>
+          </div>
+
+          <div class="hero__cards">
+            <div class="hero__card hero__card--folder">
+              <img
+                src="../../../src/assets/new/icons/image.png"
+                alt="Photo"
+                class="hero__card-icon"
+              />
+              <span class="hero__card-text">Photo</span>
+            </div>
+
+            <div class="hero__card hero__card--folder">
+              <img
+                src="../../../src/assets/new/icons/music.png"
+                alt="Music"
+                class="hero__card-icon"
+              />
+              <span class="hero__card-text">Music</span>
+            </div>
+
+            <div class="hero__card hero__card--folder">
+              <img
+                src="../../../src/assets/new/icons/video.png"
+                alt="Video"
+                class="hero__card-icon"
+              />
+              <span class="hero__card-text">Video</span>
+            </div>
+
+            <div class="hero__card hero__card--new-folder">
+              <img
+                src="../../../src/assets/new/icons/plus.png"
+                alt="New Folder"
+                class="hero__card-icon"
+              />
+              <span class="hero__card-text">New Folder</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__tutorial">
+          <button class="hero__tutorial-button">
+            <span class="hero__tutorial-thumb">
+              <img
+                src="../../../src/assets/new/backgrounds/tutorial.jpg"
+                alt="Tutorial"
+              />
+              <img
+                src="../../../src/assets/new/icons/play.png"
+                alt="Play"
+                class="hero__card-icon"
+              />
+            </span>
+            <span class="hero__tutorial-text">Watch the Tutorial</span>
+          </button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
