@@ -14,6 +14,7 @@
   <body>
     <!-- Nav Bar -->
     <div class="nav-bar">
+      <!-- Logo -->
       <div class="nav-bar__logo">
         <img
           src="../../../src/assets/new/logos/nav-bar-logo.png"
@@ -21,30 +22,50 @@
         />
       </div>
 
-      <div class="nav-bar__menu">
-        <div class="nav-bar__item">
-          <a href="/application" class="nav-bar__link">Our Application</a>
+      <div class="nav-bar__center">
+        <!-- Toggle (mobile) -->
+        <div class="nav-bar__toggle" id="navToggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
-        <div class="nav-bar__item">
-          <a href="/communities" class="nav-bar__link">Communities</a>
-        </div>
+        <!-- Menu (desktop + mobile) -->
+        <div class="nav-bar__menu" id="navMenu">
+          <div class="nav-bar__item">
+            <a href="/application" class="nav-bar__link">Our Application</a>
+          </div>
 
-        <div class="nav-bar__item">
-          <a href="/docs" class="nav-bar__link">Docs</a>
-        </div>
+          <div class="nav-bar__item">
+            <a href="/communities" class="nav-bar__link">Communities</a>
+          </div>
 
-        <div class="nav-bar__item">
-          <a href="/pricing" class="nav-bar__link">Pricing</a>
+          <div class="nav-bar__item">
+            <a href="/docs" class="nav-bar__link">Docs</a>
+          </div>
+
+          <div class="nav-bar__item">
+            <a href="/pricing" class="nav-bar__link">Pricing</a>
+          </div>
+
+          <div class="nav-bar__item nav-bar__item--mobile-only">
+            <a href="/sign-in" class="nav-bar__link">Sign in</a>
+          </div>
+
+          <div class="nav-bar__item nav-bar__item--mobile-only">
+            <a href="/register" class="nav-bar__link">Register</a>
+          </div>
         </div>
       </div>
 
+      <!-- Actions desktop (GIỮ NGUYÊN) -->
       <div class="nav-bar__actions">
         <div class="nav-bar__button nav-bar__button--sign-in">Sign in</div>
-
         <div class="nav-bar__button nav-bar__button--register">Register</div>
       </div>
     </div>
+
+    <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- Hero Section -->
     <section class="hero hero--video">
@@ -388,7 +409,7 @@
               </p>
             </li>
           </ul>
-          <div class="overplay"></div>
+          <div class="overlay"></div>
         </div>
       </div>
     </section>
@@ -459,5 +480,59 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const toggle = document.getElementById("navToggle");
+      const menu = document.getElementById("navMenu");
+      const overlay = document.getElementById("navOverlay");
+
+      const setMenuHeight = () => {
+        const height = menu.scrollHeight;
+        document.documentElement.style.setProperty(
+          "--nav-menu-height",
+          `${height}px`
+        );
+      };
+
+      const clearMenuHeight = () => {
+        document.documentElement.style.setProperty("--nav-menu-height", "0px");
+      };
+
+      const closeMenu = () => {
+        menu.classList.remove("is-open");
+        toggle.classList.remove("is-open");
+        overlay.classList.remove("is-active");
+        document.body.classList.remove("nav-locked");
+        clearMenuHeight();
+      };
+
+      const openMenu = () => {
+        setMenuHeight();
+        menu.classList.add("is-open");
+        toggle.classList.add("is-open");
+        overlay.classList.add("is-active");
+        document.body.classList.add("nav-locked");
+      };
+
+      if (toggle && menu && overlay) {
+        toggle.addEventListener("click", () => {
+          menu.classList.contains("is-open") ? closeMenu() : openMenu();
+        });
+
+        overlay.addEventListener("click", closeMenu);
+
+        menu.querySelectorAll("a, .nav-bar__button").forEach((item) => {
+          item.addEventListener("click", closeMenu);
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768) {
+            closeMenu();
+          } else if (menu.classList.contains("is-open")) {
+            setMenuHeight(); // cập nhật khi rotate
+          }
+        });
+      }
+    </script>
   </body>
 </html>
