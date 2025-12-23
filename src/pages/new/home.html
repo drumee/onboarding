@@ -45,7 +45,9 @@
           </div>
 
           <div class="nav-bar__item">
-            <a href="/pricing" class="nav-bar__link">Pricing</a>
+            <a href="/src/pages/new/pricing.html" class="nav-bar__link"
+              >Pricing</a
+            >
           </div>
 
           <div class="nav-bar__item nav-bar__item--mobile-only">
@@ -375,111 +377,162 @@
       </section>
     </div>
 
-    <!-- Footer -->
-    <section class="how-it-works">
-      <div class="how-it-works__container">
-        <!-- Left -->
-        <div class="how-it-works__left">
-          <div class="how-it-works__icon">
-            <img
-              src="../../../src/assets/new/images/group-folder.png"
-              alt="icon"
-            />
-          </div>
-          <h2 class="how-it-works__title">How it works</h2>
-          <p class="how-it-works__subtitle">Simple. Secure. Private.</p>
-        </div>
-
-        <!-- Right -->
-        <div class="how-it-works__right">
-          <ul class="steps">
-            <li class="step">
-              <img src="../../../src/assets/new/images/list-1.png" alt="icon" />
-              <p>Create your account with your email in seconds.</p>
-            </li>
-            <li class="step">
-              <img src="../../../src/assets/new/images/list-2.png" alt="icon" />
-              <p>Drag, drop and manage your files in your private cloud.</p>
-            </li>
-            <li class="step">
-              <img src="../../../src/assets/new/images/list-3.png" alt="icon" />
-              <p>
-                Set up your apps and start storing your data in a fully private
-                and secure environment.
-              </p>
-            </li>
-          </ul>
-          <div class="overlay"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer__bg-secondary">
-        <img
-          src="../../../src/assets/new/backgrounds/tutorial.jpg"
-          alt="icon"
-        />
-      </div>
-      <div class="footer__tutorial">
-        <button class="footer__tutorial-button">
-          <span class="footer__tutorial-thumb">
-            <img
-              src="../../../src/assets/new/backgrounds/tutorial.jpg"
-              alt="Tutorial"
-            />
-            <img
-              src="../../../src/assets/new/icons/play.png"
-              alt="Play"
-              class="footer__tutorial-icon"
-            />
-          </span>
-          <span class="footer__tutorial-text">Watch the Tutorial</span>
-        </button>
-      </div>
-      <div class="footer__bg">
-        <div class="footer__content">
-          <h2 class="footer__title">Own your cloud. Own your rules.</h2>
-
-          <div class="footer__form">
-            <input
-              type="email"
-              placeholder="Enter email address"
-              class="footer__input"
-            />
-            <button class="footer__button">Explore Now</button>
-          </div>
-
-          <div class="footer__socials">
-            <span class="footer__social">
+    <!-- CTA STACK (How it works + Footer) -->
+    <section class="cta-stack" aria-label="How it works and call to action">
+      <!-- How it works (overlay on desktop) -->
+      <section
+        class="how-it-works how-it-works--overlay"
+        aria-labelledby="how-it-works-title"
+      >
+        <div class="how-it-works__container">
+          <!-- Left -->
+          <div class="how-it-works__left">
+            <div class="how-it-works__icon" aria-hidden="true">
               <img
-                src="../../../src/assets/new/logos/discord-logo.png"
-                alt="icon"
+                src="../../../src/assets/new/images/group-folder.png"
+                alt=""
+                loading="lazy"
               />
-            </span>
-            <span class="footer__social">
-              <img src="../../../src/assets/new/logos/x-logo.png" alt="icon" />
-            </span>
-            <span class="footer__social">
-              <img
-                src="../../../src/assets/new/logos/telegram-logo.png"
-                alt="icon"
-              />
-            </span>
+            </div>
+
+            <h2 class="how-it-works__title" id="how-it-works-title">
+              How it works
+            </h2>
+            <p class="how-it-works__subtitle">Simple. Secure. Private.</p>
+          </div>
+
+          <!-- Right -->
+          <div class="how-it-works__right" aria-label="Steps">
+            <ul class="steps">
+              <li class="step">
+                <img
+                  src="../../../src/assets/new/images/list-1.png"
+                  alt=""
+                  loading="lazy"
+                />
+                <p>Create your account with your email in seconds.</p>
+              </li>
+
+              <li class="step">
+                <img
+                  src="../../../src/assets/new/images/list-2.png"
+                  alt=""
+                  loading="lazy"
+                />
+                <p>Drag, drop and manage your files in your private cloud.</p>
+              </li>
+
+              <li class="step">
+                <img
+                  src="../../../src/assets/new/images/list-3.png"
+                  alt=""
+                  loading="lazy"
+                />
+                <p>
+                  Set up your apps and start storing your data in a fully
+                  private and secure environment.
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
+      </section>
 
-        <div class="footer__separator"></div>
-
-        <div class="footer__brand">
+      <!-- Footer CTA -->
+      <footer class="footer" aria-label="Footer call to action">
+        <!-- Tilted background image (behind) -->
+        <div class="footer__bg-secondary" aria-hidden="true">
           <img
-            src="../../../src/assets/new/logos/footer-logo.png"
-            alt="drumee"
+            src="../../../src/assets/new/backgrounds/tutorial.jpg"
+            alt=""
+            loading="lazy"
           />
         </div>
-      </div>
-    </footer>
+
+        <!-- Tutorial pill -->
+        <div class="footer__tutorial">
+          <button
+            class="footer__tutorial-button"
+            type="button"
+            aria-label="Watch the tutorial"
+          >
+            <span class="footer__tutorial-thumb" aria-hidden="true">
+              <img
+                src="../../../src/assets/new/backgrounds/tutorial.jpg"
+                alt=""
+                loading="lazy"
+              />
+              <img
+                src="../../../src/assets/new/icons/play.png"
+                alt=""
+                class="footer__tutorial-icon"
+                loading="lazy"
+              />
+            </span>
+            <span class="footer__tutorial-text">Watch the Tutorial</span>
+          </button>
+        </div>
+
+        <!-- Main folder area -->
+        <div class="footer__bg">
+          <div class="footer__content">
+            <h2 class="footer__title">Own your cloud. Own your rules.</h2>
+
+            <form class="footer__form" action="#" method="post" novalidate>
+              <input
+                id="cta-email"
+                type="email"
+                name="email"
+                placeholder="Enter email address"
+                class="footer__input"
+                autocomplete="email"
+              />
+              <button class="footer__button" type="submit">Explore Now</button>
+            </form>
+
+            <nav class="footer__socials" aria-label="Social links">
+              <a class="footer__social" href="#" aria-label="Discord">
+                <img
+                  src="../../../src/assets/new/logos/discord-logo.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+
+              <a class="footer__social" href="#" aria-label="X">
+                <img
+                  src="../../../src/assets/new/logos/x-logo.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+
+              <a class="footer__social" href="#" aria-label="Telegram">
+                <img
+                  src="../../../src/assets/new/logos/telegram-logo.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </nav>
+          </div>
+
+          <div
+            class="footer__separator"
+            role="separator"
+            aria-hidden="true"
+          ></div>
+
+          <div class="footer__brand" aria-label="Brand logo">
+            <img
+              src="../../../src/assets/new/logos/footer-logo.png"
+              alt="drumee"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </footer>
+    </section>
 
     <script>
       const toggle = document.getElementById("navToggle");
