@@ -10,7 +10,6 @@
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
 
-  // ✅ convert features[] -> Map(key -> {key,name,value})
   const toFeatureMap = (featuresArr) => {
     const map = new Map();
     (featuresArr || []).forEach((f) => {
@@ -51,10 +50,8 @@
         "priority-performance",
       ];
 
-      // ✅ map để lookup theo key
       const featureMap = toFeatureMap(p.features);
 
-      // ✅ trả về list feature object để render value + name
       const features = featureOrder
         .map((key) => featureMap.get(key))
         .filter((f) => {
@@ -71,7 +68,7 @@
         ctaText,
         ctaVariant,
         isPopular,
-        features, // ✅ array of {key,name,value}
+        features,
       };
     });
   };
@@ -97,12 +94,10 @@
             ? "hero-pricing__btn hero-pricing__btn--dark"
             : "hero-pricing__btn";
 
-        // ✅ render value + name (2 dòng), đúng style bạn cần
         const features = (p.features || [])
           .map((f) => {
             const value = f?.value;
 
-            // boolean true => chỉ render name (hoặc bạn có thể để trống value)
             if (typeof value === "boolean") {
               return `
                 <li class="hero-pricing__feature">
