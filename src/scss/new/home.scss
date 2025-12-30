@@ -74,7 +74,9 @@ body {
     line-height: 20px;
     letter-spacing: 0.14px;
     text-decoration: none;
-
+    &.white{
+      color: var(--neutral-100)
+    }
     &:hover {
       color: var(--primary-600);
     }
