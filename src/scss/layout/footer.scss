@@ -42,7 +42,7 @@
 
     position: relative;
 
-    @media (max-width: map.get($breakpoints, md)) {
+    @media (max-width: map.get($breakpoints, xl)) {
       grid-template-columns: 1fr;
       gap: 24px;
       padding: 0 16px;
@@ -50,7 +50,7 @@
   }
 
   &__left {
-    @media (max-width: map.get($breakpoints, md)) {
+    @media (max-width: map.get($breakpoints, xl)) {
       text-align: center;
     }
   }
@@ -67,7 +67,7 @@
       display: block;
     }
 
-    @media (max-width: map.get($breakpoints, md)) {
+    @media (max-width: map.get($breakpoints, xl)) {
       margin: 0 auto 16px;
       width: 64px;
       height: 64px;
@@ -80,7 +80,7 @@
     margin: 0 0 12px;
     color: #2d1f3f;
 
-    @media (max-width: map.get($breakpoints, md)) {
+    @media (max-width: map.get($breakpoints, xl)) {
       line-height: 36px;
     }
   }
@@ -90,7 +90,7 @@
     color: #7a6f8a;
     margin: 0;
 
-    @media (max-width: map.get($breakpoints, md)) {
+    @media (max-width: map.get($breakpoints, xl)) {
       font-size: 14px;
     }
   }
@@ -147,7 +147,7 @@
       }
     }
 
-    @media (max-width: map.get($breakpoints, md)) {
+    @media (max-width: map.get($breakpoints, xl)) {
       position: relative; // ✅ mobile trở về flow
       top: auto;
       right: auto;
@@ -164,7 +164,7 @@
     }
   }
 
-  @media (max-width: map.get($breakpoints, md)) {
+  @media (max-width: map.get($breakpoints, xl)) {
     &__right {
       padding: clamp(18px, 2vw, 40px) clamp(18px, 2.4vw, 48px);
     }
@@ -183,7 +183,7 @@
     pointer-events: auto;
   }
 
-  @media (max-width: map.get($breakpoints, md)) {
+  @media (max-width: map.get($breakpoints, xl)) {
     position: relative;
     top: 0;
     padding: 24px 0 16px;
@@ -196,7 +196,7 @@
 
   padding: clamp(180px, 18vw, 240px) 0 32px;
 
-  @media (max-width: map.get($breakpoints, md)) {
+  @media (max-width: map.get($breakpoints, xl)) {
     padding: 16px 0 0;
   }
 
@@ -225,7 +225,7 @@
       display: block;
     }
 
-    @media (max-width: map.get($breakpoints, md)) {
+    @media (max-width: map.get($breakpoints, xl)) {
       position: relative;
       inset: auto;
       padding-top: 0;
@@ -248,13 +248,12 @@
     z-index: 2;
     width: max-content;
 
-    @media (max-width: map.get($breakpoints, md)) {
+    @media (max-width: map.get($breakpoints, xl)) {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       justify-content: center;
-      top: 25%;
     }
 
     &-button {
@@ -309,7 +308,6 @@
       font-size: 14px;
       color: var(--neutral-900);
       white-space: nowrap;
-      font-family: "Armin Grotesk";
       font-weight: 400;
       line-height: 20px;
       letter-spacing: 0.14px;
@@ -321,7 +319,7 @@
     z-index: 1;
 
     width: calc(100% - 48px);
-    max-width: 1200px;
+    max-width: 1260px;
     margin: 0 auto;
 
     border-radius: 40px;
@@ -458,10 +456,10 @@
     }
   }
 
-  @media (max-width: map.get($breakpoints, md)) {
+  @media (max-width: map.get($breakpoints, xl)) {
     &__bg {
       width: calc(100% - 32px);
-      margin: 0 auto;
+      margin: 0 auto 20px;
       border-radius: 24px;
 
       background-image: none;

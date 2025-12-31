@@ -479,46 +479,67 @@
 // Feature Section
 // ================================
 
-.feature-section {
+.features {
   padding: 10px 0;
   background: #fff;
 
+  &__wrapper {
+    display: grid;
+    gap: 32px;
+    padding: 40px 20px;
+    justify-content: center;
+  }
+
+  &__wrapper--top {
+    grid-template-columns: 1fr;
+    @media (min-width: map.get($breakpoints, xxxl)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__wrapper--bottom {
+    grid-template-columns: 1fr;
+
+    @media (min-width: map.get($breakpoints, md)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.feature {
+  background: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 40px;
+  overflow: hidden;
+
+  padding: 40px;
+  display: grid;
+  gap: 48px;
+  align-items: center;
+
   &__container {
-    margin: 0 20px;
-    padding: 40px;
-    display: flex;
-    gap: 48px;
-    background: #fafafa;
-    border-radius: 40px;
-    border: 1px solid #eaeaea;
-    align-items: center;
+    max-width: 2000px;
   }
 
   &__content {
-    flex: 1;
-    padding: 60px;
-    padding-left: 100px;
     display: flex;
     flex-direction: column;
     gap: 32px;
   }
 
-  &__media {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
+  &__icon {
+    width: 120px;
+    height: 120px;
 
-  &__image {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 24px;
-    object-fit: contain;
-    padding: 24px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 
   &__title {
-    width: 358px;
+    max-width: 660px;
     font-size: 56px;
     font-weight: 800;
     line-height: 64px;
@@ -545,7 +566,7 @@
   }
 
   &__btn {
-    width: 200px;
+    width: fit-content;
     padding: 12px 20px;
     border-radius: 24px;
     border: none;
@@ -558,32 +579,48 @@
     }
   }
 
-  &--reverse {
-    .feature-section__container {
-      flex-direction: row-reverse;
-    }
+  &__media {
+    display: flex;
+    justify-content: center;
+  }
 
-    .feature-section__content {
-      padding-left: 60px;
-      padding-right: 100px;
+  &__image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 24px;
+    object-fit: contain;
+    padding: 24px;
+  }
+
+  &--split {
+    grid-template-columns: 1fr 1fr;
+
+    .feature__content {
+      padding: 60px;
+      padding-left: 100px;
     }
   }
 
-  &--card {
-    padding: 0;
-    width: 100%;
-
-    .feature-section__container {
-      flex-direction: column;
-      gap: 32px;
-      padding: 0;
-      border-radius: 32px;
-      border: 1px solid #eee;
-      margin: 0;
-      height: 950px;
+  &--reverse {
+    .feature__content {
+      padding-left: 60px;
+      padding-right: 100px;
     }
 
-    .feature-section__content {
+    .feature__content {
+      order: 2;
+    }
+
+    .feature__media {
+      order: 1;
+    }
+  }
+
+  &--stack {
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    .feature__content {
       padding: 40px;
       padding-bottom: 0;
       align-items: center;
@@ -591,27 +628,27 @@
       gap: 20px;
     }
 
-    .feature-section__title {
+    .feature__title {
       width: 100%;
       max-width: 660px;
       font-size: 46px;
+      line-height: 54px;
     }
 
-    .feature-section__desc {
+    .feature__desc {
       font-size: 14px;
       max-width: 360px;
     }
 
-    .feature-section__btn {
-      width: auto;
+    .feature__btn {
       font-size: 13px;
     }
 
-    .feature-section__media {
+    .feature__media {
       padding: 32px;
     }
 
-    .feature-section__image {
+    .feature__image {
       max-width: 600px;
       max-height: 450px;
       padding: 0;
@@ -619,32 +656,25 @@
   }
 }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  padding: 40px 20px;
-  justify-content: center;
-
-  @media (min-width: map.get($breakpoints, md)) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: map.get($breakpoints, md)) {
-  .feature-section {
-    padding: 0;
-
-    &__container {
-      flex-direction: column;
-      align-items: center;
-      padding: 24px;
+@media (max-width: map.get($breakpoints, lg)) {
+  .features {
+    &__wrapper {
+      padding: 24px 16px;
       gap: 24px;
-      border-radius: 24px;
     }
 
+    &__wrapper--bottom {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .feature {
+    padding: 24px;
+    border-radius: 24px;
+    gap: 24px;
+
     &__content {
-      padding: 0;
+      padding: 0 !important;
       align-items: center;
       text-align: center;
       gap: 20px;
@@ -667,13 +697,8 @@
     }
 
     &__btn {
-      width: auto;
       padding: 10px 20px;
       font-size: 13px;
-    }
-
-    &__media {
-      width: 100%;
     }
 
     &__image {
@@ -681,41 +706,33 @@
       padding: 0;
     }
 
-    &--reverse {
-      .feature-section__container {
-        flex-direction: column;
-      }
+    // split -> stack on mobile
+    &--split {
+      grid-template-columns: 1fr;
+    }
 
-      .feature-section__content {
-        padding: 0;
+    &--reverse {
+      .feature__content,
+      .feature__media {
+        order: initial;
       }
     }
 
-    &--card {
-      .feature-section__container {
-        padding: 24px;
-      }
-
-      .feature-section__content {
+    &--stack {
+      .feature__media {
         padding: 0;
       }
 
-      .feature-section__title {
-        font-size: 26px;
-        line-height: 34px;
-        width: 100%;
-      }
-
-      .feature-section__image {
+      .feature__image {
         width: 100%;
         max-width: 320px;
         height: auto;
       }
-    }
-  }
 
-  .feature-grid {
-    padding: 24px 16px;
-    gap: 24px;
+      .feature__title {
+        font-size: 26px;
+        line-height: 34px;
+      }
+    }
   }
 }
