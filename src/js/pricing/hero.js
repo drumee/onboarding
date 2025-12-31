@@ -91,8 +91,8 @@
           p.ctaVariant === "primary"
             ? "hero-pricing__btn hero-pricing__btn--primary"
             : p.ctaVariant === "dark"
-            ? "hero-pricing__btn hero-pricing__btn--dark"
-            : "hero-pricing__btn";
+              ? "hero-pricing__btn hero-pricing__btn--dark"
+              : "hero-pricing__btn";
 
         const features = (p.features || [])
           .map((f) => {
@@ -104,8 +104,8 @@
                   <span class="hero-pricing__check" aria-hidden="true">✓</span>
                   <span class="hero-pricing__feature-text">
                     <span class="hero-pricing__feature-name">${escapeHtml(
-                      f.name
-                    )}</span>
+                f.name
+              )}</span>
                   </span>
                 </li>
               `;
@@ -116,11 +116,11 @@
                 <span class="hero-pricing__check" aria-hidden="true">✓</span>
                 <span class="hero-pricing__feature-text">
                   <span class="hero-pricing__feature-value">${escapeHtml(
-                    value
-                  )}</span>
+              value
+            )}</span>
                   <span class="hero-pricing__feature-name">${escapeHtml(
-                    f.name
-                  )}</span>
+              f.name
+            )}</span>
                 </span>
               </li>
             `;
@@ -128,8 +128,7 @@
           .join("");
 
         return `
-          <article class="hero-pricing__card ${
-            p.isPopular ? "is-popular" : ""
+          <article class="hero-pricing__card ${p.isPopular ? "is-popular" : ""
           }">
             ${popularBadge}
             <h3 class="hero-pricing__plan">${escapeHtml(p.name)}</h3>
@@ -140,15 +139,13 @@
 
             ${note}
 
-            <button class="${btnClass}" type="button">${escapeHtml(
-          p.ctaText
-        )}</button>
+            <a href="https://drumee.org/-/#welcome/signup"><button class="${btnClass}" type="button">${escapeHtml(p.ctaText)}</button></a>
 
             <div class="hero-pricing__divider" aria-hidden="true"></div>
 
             <ul class="hero-pricing__features" aria-label="${escapeHtml(
-              p.name
-            )} features">
+            p.name
+          )} features">
               ${features}
             </ul>
           </article>
