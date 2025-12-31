@@ -244,16 +244,19 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: clamp(110px, 10vw, 170px);
     z-index: 2;
     width: max-content;
 
-    @media (max-width: map.get($breakpoints, xl)) {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      justify-content: center;
+    @media (min-width: map.get($breakpoints, xs)) {
+      top: clamp(110px, 10vw, 170px);
+    }
+
+    @media (min-width: map.get($breakpoints, md)) {
+      top: 28%;
+    }
+
+    @media (min-width: map.get($breakpoints, lg)) {
+      top: clamp(110px, 10vw, 170px);
     }
 
     &-button {
