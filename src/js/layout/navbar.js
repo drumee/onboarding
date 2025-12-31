@@ -33,7 +33,6 @@ function initNavbar() {
     document.body.classList.add("nav-locked");
   };
 
-  // tránh bind nhiều lần nếu reload (optional)
   toggle.onclick = () => {
     menu.classList.contains("is-open") ? closeMenu() : openMenu();
   };
@@ -53,5 +52,4 @@ function initNavbar() {
   };
 }
 
-// expose global
 window.initNavbar = initNavbar;

@@ -12,7 +12,7 @@ async function loadHtml(selector, url) {
 document.addEventListener("DOMContentLoaded", async () => {
   const containerUrl =
     document.body.dataset.container || "/src/partials/container/home.html";
-  const pageKey = document.body.dataset.page; // pricing, home, ...
+  const pageKey = document.body.dataset.page;
 
   try {
     await loadHtml("#app-navbar", "/src/partials/layout/navbar.html");
@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (window.initNavbar) window.initNavbar();
 
-    // ✅ init scripts theo page
     await initPage(pageKey);
   } catch (err) {
     console.error(err);
