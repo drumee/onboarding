@@ -1,5 +1,5 @@
 const pages = {
-  pricing: () => import("/src/js/page-init/pricing.js"),
+  pricing: () => import("./pricing.js"),
   // home: () => import("/src/js/page-init/home.js"),
   // features: () => import("/src/js/page-init/features.js"),
 };
