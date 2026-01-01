@@ -75,11 +75,13 @@
     &--sign-in {
       background: var(--neutral-100);
       color: var(--neutral-900);
+      text-decoration: none;
     }
 
     &--register {
       background: var(--neutral-950);
       color: #fff;
+      text-decoration: none;
     }
   }
 }

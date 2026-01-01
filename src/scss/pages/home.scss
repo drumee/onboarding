@@ -570,7 +570,8 @@
     background: #392046;
     color: #fff;
     cursor: pointer;
-
+    text-decoration: none;
+    font-size: 16px;
     &:hover {
       opacity: 0.9;
     }
@@ -635,10 +636,6 @@
     .feature__desc {
       font-size: 14px;
       max-width: 360px;
-    }
-
-    .feature__btn {
-      font-size: 13px;
     }
 
     .feature__media {
