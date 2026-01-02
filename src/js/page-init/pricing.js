@@ -7,10 +7,10 @@ export async function init() {
   }
 
   if (document.getElementById("hero-pricing")) {
-    await import("/src/js/pricing/hero.js");
+    await import("../pricing/hero.js");
   }
 
   if (document.getElementById("compare-table")) {
-    await import("/src/js/pricing/plan.js");
+    await import("../pricing/plan.js");
   }
 }
