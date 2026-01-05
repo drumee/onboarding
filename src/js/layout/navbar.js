@@ -1,4 +1,4 @@
-function initNavbar() {
+export function initNavbar() {
   const toggle = document.getElementById("navToggle");
   const menu = document.getElementById("navMenu");
   const overlay = document.getElementById("navOverlay");
@@ -51,5 +51,3 @@ function initNavbar() {
     }
   };
 }
-
-window.initNavbar = initNavbar;

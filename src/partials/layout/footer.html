@@ -65,25 +65,21 @@
     </div>
 
     <div class="footer__tutorial">
-      <button
-        class="footer__tutorial-button"
-        type="button"
-        aria-label="Watch the tutorial"
-      >
-        <span class="footer__tutorial-thumb" aria-hidden="true">
+      <button class="tutorial-button tutorial-button--light" type="button">
+        <span class="tutorial-button__thumb">
           <img
             src="../../../src/assets/new/backgrounds/tutorial.jpg"
-            alt=""
+            alt="Tutorial preview"
             loading="lazy"
           />
           <img
             src="../../../src/assets/new/icons/play.png"
-            alt=""
-            class="footer__tutorial-icon"
-            loading="lazy"
+            alt="Play"
+            class="tutorial-button__icon"
           />
         </span>
-        <span class="footer__tutorial-text">Watch the Tutorial</span>
+
+        <span class="tutorial-button__text">Watch the Tutorial</span>
       </button>
     </div>
 
@@ -142,3 +138,32 @@
     </div>
   </footer>
 </section>
+
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal__overlay" data-video-close></div>
+
+  <div class="video-modal__content" role="dialog" aria-modal="true">
+    <button
+      class="video-modal__close"
+      type="button"
+      aria-label="Close video"
+      data-video-close
+    >
+      ✕
+    </button>
+
+    <div class="video-modal__player">
+      <video
+        id="tutorialVideo"
+        controls
+        preload="metadata"
+        poster="../../../src/assets/new/backgrounds/tutorial.jpg"
+      >
+        <source
+          src="../../../src/assets/new/videos/hero-section.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+  </div>
+</div>

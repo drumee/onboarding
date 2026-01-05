@@ -1,0 +1,24 @@
+{
+  "communities": [
+    {
+      "imageUrl": "../../assets/new/images/communities-discord.png",
+      "name": "Discord",
+      "features": [
+        "Get real-time support from our team",
+        "Share ideas and connect with other users",
+        "Stay updated on product releases"
+      ],
+      "buttonTitle": "Join Discord →"
+    },
+    {
+      "imageUrl": "../../assets/new/images/communities-x.png",
+      "name": "X (Twitter)",
+      "features": [
+        "Follow product announcements and updates",
+        "Join conversations about Web3 storage",
+        "Connect with the broader community"
+      ],
+      "buttonTitle": "Follow on X →"
+    }
+  ]
+}

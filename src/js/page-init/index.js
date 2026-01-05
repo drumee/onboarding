@@ -1,9 +1,17 @@
+// Map page keys to their corresponding page modules
 const pages = {
   pricing: () => import("./pricing.js"),
-  // home: () => import("/src/js/page-init/home.js"),
-  // features: () => import("/src/js/page-init/features.js"),
+  // home: () => import("./home.js"),
+  communities: () => import("./communities.js"),
 };
 
+/**
+ * Initialize page-specific logic
+ * @param {string} pageKey - value from data-page attribute in HTML
+ *
+ * NOTE:
+ * If data-page is missing or invalid, no JS file will be imported.
+ */
 export async function initPage(pageKey) {
   if (!pageKey) return;
 

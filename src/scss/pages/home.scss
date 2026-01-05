@@ -489,7 +489,7 @@
 
   &__wrapper--top {
     grid-template-columns: 1fr;
-    @media (min-width: map.get($breakpoints, xxxl)) {
+    @media (min-width: map.get($breakpoints, qhd)) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -700,7 +700,6 @@
       padding: 0;
     }
 
-    // split -> stack on mobile
     &--split {
       grid-template-columns: 1fr;
     }
