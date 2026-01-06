@@ -79,7 +79,7 @@
       </div>
     </div>
 
-    <div class="hero__tutorial">
+    <!-- <div class="hero__tutorial">
       <button class="tutorial-button tutorial-button--light" type="button">
         <span class="tutorial-button__thumb">
           <img
@@ -96,7 +96,7 @@
 
         <span class="tutorial-button__text">Watch the Tutorial</span>
       </button>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -178,10 +178,13 @@
 
     <!-- Main mockup -->
     <div class="showcase__mockup">
-      <img
-        src="../../../src/assets/new/images/showcase-mockup.png"
-        alt="App mockup"
-      />
+      <video
+        src="../../../src/assets/new/videos/show-case.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
     </div>
   </div>
 </section>
@@ -209,11 +212,12 @@
       </div>
 
       <div class="feature__media">
-        <img
-          src="../../../src/assets/new/images/feature-1.png"
-          alt="Privacy preview"
-          class="feature__image"
-        />
+        <rive-player
+          src="../../../src/assets/new/videos/interactive_security_card.riv"
+          autoplay
+          loop
+          class="feature__video"
+        ></rive-player>
       </div>
     </article>
 
@@ -249,11 +253,14 @@
       </div>
 
       <div class="feature__media">
-        <img
-          src="../../../src/assets/new/images/feature-2.png"
-          alt="Use Drumee preview"
-          class="feature__image"
-        />
+        <video
+          src="../../../src/assets/new/videos/use-drumee-your-way.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="feature__video"
+        ></video>
       </div>
     </article>
   </div>
@@ -282,7 +289,7 @@
         <img
           src="../../../src/assets/new/images/feature-3.png"
           alt="Collaboration preview"
-          class="feature__image"
+          class="feature__video"
         />
       </div>
     </article>
@@ -310,7 +317,7 @@
         <img
           src="../../../src/assets/new/images/feature-2.png"
           alt="Powerful preview"
-          class="feature__image"
+          class="feature__video"
         />
       </div>
     </article>
