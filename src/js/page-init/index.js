@@ -1,8 +1,8 @@
 // Map page keys to their corresponding page modules
 const pages = {
   pricing: () => import("./pricing.js"),
-  // home: () => import("./home.js"),
   communities: () => import("./communities.js"),
+  docs: () => import("./docs.js"),
 };
 
 /**

@@ -30,7 +30,6 @@
           .map(
             (t) => `
               <li class="communities__feature">
-                <span class="communities__dot" aria-hidden="true">•</span>
                 <span class="communities__feature-text">${escapeHtml(t)}</span>
               </li>
             `
