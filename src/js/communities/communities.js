@@ -1,5 +1,3 @@
-// /src/js/page-init/communities.js (hoặc path bạn muốn)
-
 (async () => {
   const mount = document.getElementById("communities");
   if (!mount) return;
@@ -18,7 +16,6 @@
       name: c.name || "",
       features: Array.isArray(c.features) ? c.features.filter(Boolean) : [],
       buttonTitle: c.buttonTitle || "Learn more →",
-      // optional (nếu sau này bạn muốn add link)
       href: c.href || "#",
     }));
   };
@@ -72,7 +69,6 @@
   };
 
   try {
-    // chỉnh path đúng theo file của bạn
     const res = await fetch("../../data/communities/communities.json");
     if (!res.ok) throw new Error(`Failed to load data.json: ${res.status}`);
 
