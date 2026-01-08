@@ -1,6 +1,6 @@
 import { initPage } from "../page-init/index.js";
 import { initNavbar } from "../layout/navbar.js";
-import { initVideoModal } from "../layout/tutorial-video.js";
+// import { initVideoModal } from "../layout/tutorial-video.js";
 
 async function loadHtml(selector, url) {
   const el = document.querySelector(selector);
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadHtml("#app-footer", "../../partials/layout/footer.html");
 
     initNavbar();
-    initVideoModal();
+    // initVideoModal();
 
     await initPage(pageKey);
   } catch (err) {

@@ -488,9 +488,6 @@
 
   &__wrapper--top {
     grid-template-columns: 1fr;
-    @media (min-width: map.get($breakpoints, qhd)) {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 
   &__wrapper--bottom {
@@ -579,13 +576,14 @@
   &__media {
     display: flex;
     justify-content: center;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 24px;
   }
 
   &__video {
     width: 100%;
-    max-width: 600px;
-    border-radius: 24px;
-    object-fit: contain;
   }
 
   &--split {
@@ -635,16 +633,6 @@
       font-size: 14px;
       max-width: 360px;
     }
-
-    .feature__media {
-      padding: 32px;
-    }
-
-    .feature__image {
-      max-width: 600px;
-      max-height: 450px;
-      padding: 0;
-    }
   }
 }
 
@@ -693,11 +681,6 @@
       font-size: 13px;
     }
 
-    &__image {
-      max-width: 320px;
-      padding: 0;
-    }
-
     &--split {
       grid-template-columns: 1fr;
     }
@@ -710,16 +693,6 @@
     }
 
     &--stack {
-      .feature__media {
-        padding: 0;
-      }
-
-      .feature__image {
-        width: 100%;
-        max-width: 320px;
-        height: auto;
-      }
-
       .feature__title {
         font-size: 26px;
         line-height: 34px;

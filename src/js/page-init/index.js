@@ -3,6 +3,7 @@ const pages = {
   pricing: () => import("./pricing.js"),
   communities: () => import("./communities.js"),
   docs: () => import("./docs.js"),
+  home: () => import("./home.js"),
 };
 
 /**
