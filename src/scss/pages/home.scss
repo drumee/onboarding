@@ -584,6 +584,7 @@
 
   &__video {
     width: 100%;
+    height: 100%;
   }
 
   &--split {
@@ -633,6 +634,12 @@
       font-size: 14px;
       max-width: 360px;
     }
+  }
+}
+
+@media (max-width: map.get($breakpoints, sm)) {
+  .feature__rive {
+    height: 300px;
   }
 }
 
