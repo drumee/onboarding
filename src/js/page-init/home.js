@@ -8,5 +8,5 @@ export async function init() {
 
   // const { initVideoModal } = await import("../home/tutorial-video.js");
   // initVideoModal();
-  initRive();
+  await initRive();
 }
