@@ -1,5 +1,4 @@
 export function initRive() {
-  // Rive global từ <script src="...webgl2">
   const RiveCtor = window.rive?.Rive;
   if (!RiveCtor) {
     console.error(
@@ -30,15 +29,6 @@ export function initRive() {
       src,
       canvas,
       autoplay: true,
-
-      // Nếu bạn dùng state machine:
-      // stateMachines: "State Machine 1",
-
-      // Nếu cần fit/alignment (tùy runtime hỗ trợ):
-      // layout: new window.rive.Layout({
-      //   fit: window.rive.Fit.Contain,
-      //   alignment: window.rive.Alignment.Center,
-      // }),
     });
 
     instances.push({ canvas, inst, resize });
@@ -46,7 +36,6 @@ export function initRive() {
 
   canvases.forEach(setupCanvas);
 
-  // Resize tất cả instance khi đổi kích thước
   window.addEventListener("resize", () => {
     instances.forEach(({ resize }) => resize());
   });
