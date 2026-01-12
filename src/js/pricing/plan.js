@@ -30,7 +30,7 @@
   };
 
   try {
-    const res = await fetch("../../data/pricing/plans.json");
+    const res = await fetch("/src/data/pricing/plans.json");
     if (!res.ok) throw new Error(`Failed to load plans.json: ${res.status}`);
 
     const data = await res.json();

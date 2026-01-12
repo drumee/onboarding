@@ -69,7 +69,7 @@
   };
 
   try {
-    const res = await fetch("../../data/communities/communities.json");
+    const res = await fetch("/src/data/communities/communities.json");
     if (!res.ok) throw new Error(`Failed to load data.json: ${res.status}`);
 
     const data = await res.json();

@@ -1,7 +1,7 @@
 {
   "communities": [
     {
-      "imageUrl": "../../assets/new/images/communities-discord.png",
+      "imageUrl": "/src/assets/new/images/communities-discord.png",
       "name": "Discord",
       "features": [
         "Get real-time support from our team",
@@ -11,7 +11,7 @@
       "buttonTitle": "Join Discord →"
     },
     {
-      "imageUrl": "../../assets/new/images/communities-x.png",
+      "imageUrl": "/src/assets/new/images/communities-x.png",
       "name": "X (Twitter)",
       "features": [
         "Follow product announcements and updates",
