@@ -46,7 +46,6 @@ export async function initRive() {
     if (!src) return;
 
     const smName = canvas.dataset.sm;
-    const hoverName = canvas.dataset.hover;
     const autoplay = canvas.dataset.autoplay !== "false";
 
     let inst = null;
@@ -71,41 +70,12 @@ export async function initRive() {
       onLoad: () => {
         resize();
 
-        if (!smName || !hoverName) {
+        if (!smName) {
           instances.push({ canvas, inst, resize });
           return;
         }
 
         const inputs = inst.stateMachineInputs(smName) || [];
-        const hoverInput = inputs.find((i) => i.name === hoverName);
-
-        if (!hoverInput) {
-          console.warn(
-            `[Rive] Hover input "${hoverName}" not found in SM "${smName}". src=`,
-            src
-          );
-          instances.push({ canvas, inst, resize, smName, inputs });
-          return;
-        }
-
-        const setHover = (value) => {
-          if (hoverInput.type === "boolean") hoverInput.value = !!value;
-          else if (hoverInput.type === "number")
-            hoverInput.value = value ? 1 : 0;
-          else if (hoverInput.type === "trigger" && value) hoverInput.fire();
-        };
-
-        canvas.addEventListener("mouseenter", () => setHover(true));
-        canvas.addEventListener("mouseleave", () => setHover(false));
-        canvas.addEventListener("touchstart", () => setHover(true), {
-          passive: true,
-        });
-        canvas.addEventListener("touchend", () => setHover(false), {
-          passive: true,
-        });
-        canvas.addEventListener("touchcancel", () => setHover(false), {
-          passive: true,
-        });
 
         instances.push({ canvas, inst, resize, smName, inputs });
       },
