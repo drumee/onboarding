@@ -1,19 +1,37 @@
+const RIVE_CDN = "https://unpkg.com/@rive-app/webgl2@2.31.5/rive.js";
+
+async function ensureRiveRuntime(timeoutMs = 10000) {
+  const getCtor = () => window.rive?.Rive || window.Rive || null;
+
+  if (getCtor()) return getCtor();
+
+  if (!document.querySelector('script[data-rive-runtime="1"]')) {
+    await new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = RIVE_CDN;
+      s.async = true;
+      s.dataset.riveRuntime = "1";
+      s.onload = resolve;
+      s.onerror = () =>
+        reject(new Error("Failed to load Rive runtime from CDN"));
+      document.head.appendChild(s);
+    });
+  }
+
+  const start = Date.now();
+  while (!getCtor()) {
+    if (Date.now() - start > timeoutMs) return null;
+    await new Promise((r) => setTimeout(r, 50));
+  }
+
+  return getCtor();
+}
+
 export async function initRive() {
-  const waitForRive = async (timeoutMs = 3000) => {
-    const start = Date.now();
-    while (!window.rive?.Rive) {
-      if (Date.now() - start > timeoutMs) return false;
-      await new Promise((r) => setTimeout(r, 50));
-    }
-    return true;
-  };
-
-  const ok = await waitForRive();
-  const RiveCtor = window.rive?.Rive;
-
-  if (!ok || !RiveCtor) {
+  const RiveCtor = await ensureRiveRuntime();
+  if (!RiveCtor) {
     console.error(
-      "Rive runtime not found. Make sure you loaded: https://unpkg.com/@rive-app/webgl2"
+      "Rive runtime not found / failed to load. Check CSP/Network for unpkg + rive.wasm."
     );
     return { instances: [] };
   }
@@ -36,17 +54,13 @@ export async function initRive() {
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       const rect = canvas.getBoundingClientRect();
-
       const w = Math.max(1, Math.floor(rect.width * dpr));
       const h = Math.max(1, Math.floor(rect.height * dpr));
 
       if (canvas.width !== w) canvas.width = w;
       if (canvas.height !== h) canvas.height = h;
 
-      // ✅ CỰC QUAN TRỌNG cho WebGL2 runtime
-      if (inst?.resizeDrawingSurfaceToCanvas) {
-        inst.resizeDrawingSurfaceToCanvas();
-      }
+      inst?.resizeDrawingSurfaceToCanvas?.();
     };
 
     inst = new RiveCtor({
@@ -57,7 +71,6 @@ export async function initRive() {
       onLoad: () => {
         resize();
 
-        // hover logic (như bạn đang có)
         if (!smName || !hoverName) {
           instances.push({ canvas, inst, resize });
           return;
@@ -98,10 +111,9 @@ export async function initRive() {
       },
     });
 
-    const ro = new ResizeObserver(() => resize());
+    const ro = new ResizeObserver(resize);
     ro.observe(canvas);
 
-    // lưu để debug/cleanup nếu cần
     instances.push({ canvas, inst, resize, ro });
   };
 
