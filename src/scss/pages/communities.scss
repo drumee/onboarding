@@ -236,13 +236,13 @@
   &__grid {
     margin: 0 auto;
     padding: 0 20px;
-    @media (min-width: map.get($breakpoints, qhd)) {
-      padding: 0 400px;
-    }
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+
+    @media (min-width: map.get($breakpoints, qhd)) {
+      padding: 0 400px;
+    }
 
     @media (max-width: map.get($breakpoints, md)) {
       grid-template-columns: 1fr;
