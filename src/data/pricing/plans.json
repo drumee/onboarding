@@ -7,7 +7,7 @@
       "description": "",
       "features": [
         { "key": "storage", "name": "Storage", "value": "20 GB" },
-        { "key": "editor-access", "name": "Editor access", "value": "Up to 3" },
+        { "key": "editor-access", "name": "Editor access", "value": false },
         { "key": "admin-roles", "name": "Admin roles", "value": "None" },
         { "key": "guest-access", "name": "Guest access", "value": false },
         {
@@ -39,7 +39,7 @@
       "title": "Start from $16.99 / month",
       "description": "5 seats included, each additional seat $5",
       "features": [
-        { "key": "storage", "name": "Storage", "value": "50 GB" },
+        { "key": "storage", "name": "Storage", "value": "20 GB" },
         {
           "key": "editor-access",
           "name": "Editor access",
