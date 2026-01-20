@@ -36,7 +36,10 @@
     {
       "name": "Pro",
       "period": "Monthly",
-      "title": "Start from $16.99 / month",
+      "title": {
+        "monthly": "Start from $16.99 / month",
+        "yearly": "Start from $14.44 / month"
+      },
       "description": "5 seats included, each additional seat $5",
       "features": [
         { "key": "storage", "name": "Storage", "value": "20 GB" },
