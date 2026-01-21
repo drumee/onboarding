@@ -11,9 +11,13 @@ export const DOCS_MAP = {
     label: "Core Principles",
     src: "/src/data/docs/core-principles.json",
   },
-  "terms-of-service": {
-    label: "Terms of Service",
-    src: "/src/data/docs/terms-of-service.json",
+  // "terms-of-service": {
+  //   label: "Terms of Service",
+  //   src: "/src/data/docs/terms-of-service.json",
+  // },
+  "terms-of-use": {
+    label: "Terms of Use",
+    src: "/src/data/docs/terms-of-use.json",
   },
   "privacy-policy": {
     label: "Privacy Policy",
