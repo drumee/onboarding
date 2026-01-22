@@ -13,7 +13,7 @@
         {
           "key": "version-history",
           "name": "Version history",
-          "value": "None"
+          "value": false
         },
         { "key": "activity-logs", "name": "Activity logs", "value": false },
         {
@@ -49,11 +49,11 @@
           "value": "5 included"
         },
         { "key": "admin-roles", "name": "Admin roles", "value": "1" },
-        { "key": "guest-access", "name": "Guest access", "value": true },
+        { "key": "guest-access", "name": "Guest access", "value": false },
         {
           "key": "version-history",
           "name": "Version history",
-          "value": "7 days"
+          "value": false
         },
         { "key": "activity-logs", "name": "Activity logs", "value": false },
         {
