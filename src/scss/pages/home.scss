@@ -95,6 +95,8 @@
     backdrop-filter: blur(120px);
     border: 1px solid var(--primary-300);
     border-radius: 30px;
+    cursor: none;
+    pointer-events: none;
   }
 
   &__search {

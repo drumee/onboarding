@@ -8,17 +8,19 @@
         "Share ideas and connect with other users",
         "Stay updated on product releases"
       ],
-      "buttonTitle": "Join Discord →"
+      "href": "https://discord.gg/5ZFx2H22d",
+      "buttonTitle": "Join Discord ➯"
     },
     {
       "imageUrl": "/src/assets/new/images/communities-x.png",
       "name": "X (Twitter)",
+      "href": "https://x.com/drumeeOS",
       "features": [
         "Follow product announcements and updates",
         "Join conversations about Web3 storage",
         "Connect with the broader community"
       ],
-      "buttonTitle": "Follow on X →"
+      "buttonTitle": "Follow on X ➯"
     }
   ]
 }
